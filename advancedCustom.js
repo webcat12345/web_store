@@ -418,6 +418,8 @@ if (plugin.options.sort !== false) {
 				var ids = [];
 				$inputs.each(function() {
 					var id = $(this).val();
+					console.log($(this));
+					console.log(id);
 					if (id !== '0' && id !== '') {
 						ids.push(id);
 					}
@@ -449,9 +451,7 @@ if (plugin.options.sort !== false) {
 					}
 				} else {
 					if (ids.length) {
-						console.log(ids);
 						ids = _.uniq(ids).join('or');
-						console.log('first', ids);
 						categoryIds.push('(' + ids + ')');
 					}
 				} 
