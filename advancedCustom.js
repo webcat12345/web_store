@@ -418,12 +418,11 @@ if (plugin.options.sort !== false) {
 				var ids = [];
 				$inputs.each(function() {
 					var id = $(this).val();
-					console.log($(this));
-					console.log(id);
 					if (id !== '0' && id !== '') {
 						ids.push(id);
 					}
 				});
+				ids.pop();
 
 				if ($(this).hasClass('Brands')) {
 					ids = _.uniq(ids).join('|');
