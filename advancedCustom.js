@@ -415,6 +415,7 @@ if (plugin.options.sort !== false) {
 
 			$formItems.each(function() {
 				var $inputs = $(this).find('select, :selected, :checked');
+				console.log($inputs.className);
 				var ids = [];
 				$inputs.each(function() {
 					var id = $(this).val();
@@ -422,7 +423,6 @@ if (plugin.options.sort !== false) {
 						ids.push(id);
 					}
 				});
-				ids.pop();
 
 				if ($(this).hasClass('Brands')) {
 					ids = _.uniq(ids).join('|');
@@ -449,7 +449,6 @@ if (plugin.options.sort !== false) {
 						etIds.push(ids);
 					}
 				} else {
-					console.log(ids);
 					if (ids.length) {
 						ids = _.uniq(ids).join('or');
 						categoryIds.push('(' + ids + ')');
@@ -469,7 +468,6 @@ if (plugin.options.sort !== false) {
 
 			if (categoryIds) {
 				queryString += 'categories=' + categoryIds;
-				console.log(queryString);
 			} else {
 				queryString += 'category=' + plugin.options.id + '&subcategories=true';
 			}
