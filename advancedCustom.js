@@ -418,7 +418,6 @@ if (plugin.options.sort !== false) {
 				var ids = [];
 				$inputs.each(function() {
 					var id = $(this).val();
-					console.log(id);
 					if (id !== '0' && id !== '') {
 						ids.push(id);
 					}
@@ -451,6 +450,7 @@ if (plugin.options.sort !== false) {
 				} else {
 					if (ids.length) {
 						ids = _.uniq(ids).join('or');
+						console.log('first', ids);
 						categoryIds.push('(' + ids + ')');
 					}
 				} 
@@ -458,6 +458,7 @@ if (plugin.options.sort !== false) {
 
 			if ($('.min_et select').length > 0 && etIds.length) {
 				var newIdsEt = _.uniq(etIds);
+				console.log('min-et select',newIdsEt);
 				categoryIds.push('(' + newIdsEt.join('|') + ')');
 			}
 
