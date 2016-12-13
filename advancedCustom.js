@@ -418,6 +418,7 @@ if (plugin.options.sort !== false) {
 				var ids = [];
 				$inputs.each(function() {
 					var id = $(this).val();
+					console.log(id);
 					if (id !== '0' && id !== '') {
 						ids.push(id);
 					}
@@ -461,7 +462,6 @@ if (plugin.options.sort !== false) {
 			}
 
 			categoryIds = categoryIds.join('and');
-			console.log(categoryIds);
 			var queryString = '!';
 			var $sort = $(plugin.element).find('.SortBy [name=sort]');
 			var $filters = $(plugin.element).find('.Filters [name=filters]');
