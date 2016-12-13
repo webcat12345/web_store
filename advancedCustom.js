@@ -449,6 +449,7 @@ if (plugin.options.sort !== false) {
 					}
 				} else {
 					if (ids.length) {
+						console.log(ids);
 						ids = _.uniq(ids).join('or');
 						console.log('first', ids);
 						categoryIds.push('(' + ids + ')');
@@ -458,7 +459,6 @@ if (plugin.options.sort !== false) {
 
 			if ($('.min_et select').length > 0 && etIds.length) {
 				var newIdsEt = _.uniq(etIds);
-				console.log('min-et select',newIdsEt);
 				categoryIds.push('(' + newIdsEt.join('|') + ')');
 			}
 
