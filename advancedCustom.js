@@ -415,7 +415,7 @@ if (plugin.options.sort !== false) {
 
 			$formItems.each(function() {
 				var $inputs = $(this).find('select, :selected, :checked');
-				console.log($inputs.className);
+				console.log($inputs.attr( 'name' ));
 				var ids = [];
 				$inputs.each(function() {
 					var id = $(this).val();
