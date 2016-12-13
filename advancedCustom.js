@@ -449,6 +449,7 @@ if (plugin.options.sort !== false) {
 						etIds.push(ids);
 					}
 				} else {
+					console.log(ids);
 					if (ids.length) {
 						ids = _.uniq(ids).join('or');
 						categoryIds.push('(' + ids + ')');
@@ -468,6 +469,7 @@ if (plugin.options.sort !== false) {
 
 			if (categoryIds) {
 				queryString += 'categories=' + categoryIds;
+				console.log(queryString);
 			} else {
 				queryString += 'category=' + plugin.options.id + '&subcategories=true';
 			}
