@@ -396,7 +396,7 @@ if (plugin.options.sort !== false) {
 									else{$(".FormItem .Brands .Button").append(" ");}
 							
 							$('.FormItem.Brands').insertAfter('.FormItem.SortBy');
-							$('.FormItem.Brands p.label').after('<span class="Button">Rajaa tuotemerkeittäin</span>');
+							$('.FormItem.Brands p.label').after('<span class="Button">Rajaa tuotemerkeittï¿½in</span>');
 							$('.FormItem.Brands .Button').click(function() {
 								$(this).toggleClass('Active');
 								$('.FormItem.Brands .Checks').slideToggle(); 
@@ -416,7 +416,6 @@ if (plugin.options.sort !== false) {
 			$formItems.each(function() {
 				var $inputs = $(this).find('select, :selected, :checked');
 				var ids = [];
-				console.log('check form items :', $inputs);
 				$inputs.each(function() {
 					var id = $(this).val();
 					if (id !== '0' && id !== '') {
@@ -462,7 +461,7 @@ if (plugin.options.sort !== false) {
 			}
 
 			categoryIds = categoryIds.join('and');
-
+			console.log(categoryIds);
 			var queryString = '!';
 			var $sort = $(plugin.element).find('.SortBy [name=sort]');
 			var $filters = $(plugin.element).find('.Filters [name=filters]');
