@@ -1,0 +1,16 @@
+  public convertSpecialCharacter(str:string):string {
+
+    const regex = /\/|\\|\(|\)|\[|\]|\|/g;
+    let m;
+
+    while ((m = regex.exec(str)) !== null) {
+      if (m.index === regex.lastIndex) {
+        regex.lastIndex++;
+      }
+
+      str = str.substr(0, m.index) + '\\' + str.substr(m.index);
+      regex.lastIndex++;
+    }
+
+    return str;
+  }
